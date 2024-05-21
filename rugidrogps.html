@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #000000; min-height: 12.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #000000}
+  </style>
+</head>
+<body>
+<p class="p1"><br></p>
+<p class="p2">```html</p>
+<p class="p2">&lt;!DOCTYPE html&gt;</p>
+<p class="p2">&lt;html&gt;</p>
+<p class="p2">&lt;head&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;title&gt;Raspberry Pi Pico Geolocation&lt;/title&gt;</p>
+<p class="p2">&lt;/head&gt;</p>
+<p class="p2">&lt;body&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;h1&gt;Raspberry Pi Pico Geolocation&lt;/h1&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div id="location"&gt;Loading...&lt;/div&gt;</p>
+<p class="p1"><br></p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>// Получение геолокации с сервера</p>
+<p class="p2"><span class="Apple-converted-space">    </span>fetch('/location')</p>
+<p class="p2"><span class="Apple-converted-space">      </span>.then(response =&gt; response.json())</p>
+<p class="p2"><span class="Apple-converted-space">      </span>.then(data =&gt; {</p>
+<p class="p2"><span class="Apple-converted-space">        </span>const locationDiv = document.getElementById('location');</p>
+<p class="p2"><span class="Apple-converted-space">        </span>locationDiv.textContent = `Latitude: ${data.latitude}, Longitude: ${data.longitude}`;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>})</p>
+<p class="p2"><span class="Apple-converted-space">      </span>.catch(error =&gt; {</p>
+<p class="p2"><span class="Apple-converted-space">        </span>console.error('Error fetching location:', error);</p>
+<p class="p2"><span class="Apple-converted-space">        </span>locationDiv.textContent = 'Error loading location';</p>
+<p class="p2"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p2">&lt;/body&gt;</p>
+<p class="p2">&lt;/html&gt;</p>
+<p class="p2">``</p>
+</body>
+</html>
